@@ -6,7 +6,9 @@
     <h2>Map state: {{ counter }}</h2>
     <button @click="increment()">+1</button>
     <button @click="incrementBy(5)">+5</button>
-    <button @click="incrementRandomFromStore()">Random</button>
+    <button @click="incrementRandomFromStore()" :disabled="isLoading">
+      Random
+    </button>
   </div>
 </template>
 
@@ -20,6 +22,7 @@ export default {
     },
     ...mapState({
       counter: state => state.counter,
+      isLoading: state => state.isLoading,
     }),
   },
   methods: {
