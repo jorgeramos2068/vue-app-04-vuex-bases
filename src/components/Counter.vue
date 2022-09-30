@@ -9,6 +9,7 @@
     <button @click="incrementRandomFromStore()" :disabled="isLoading">
       Random
     </button>
+    <h2>Direct getter: {{ $store.getters.squareCounter }}</h2>
   </div>
 </template>
 

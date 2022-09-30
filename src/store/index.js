@@ -30,4 +30,9 @@ export default createStore({
       context.commit('setLoading', false);
     },
   },
+  getters: {
+    squareCounter(state) {
+      return state.counter * state.counter;
+    },
+  },
 });
