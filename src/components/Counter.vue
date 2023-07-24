@@ -6,12 +6,12 @@
     <h2>Map state: {{ counter }}</h2>
     <button @click="increment()">+1</button>
     <button @click="incrementBy(5)">+5</button>
-    <button @click="incrementRandom()">Random</button>
+    <button @click="incrementRandomFromStore()">Random</button>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 
 export default {
   computed: {
@@ -29,9 +29,12 @@ export default {
     incrementBy(value) {
       this.$store.commit('incrementBy', value);
     },
-    incrementRandom() {
-      this.$store.dispatch('incrementRandom');
-    },
+    // incrementRandom() {
+    //   this.$store.dispatch('incrementRandom');
+    // },
+    ...mapActions({
+      incrementRandomFromStore: 'incrementRandom',
+    }),
   },
 };
 </script>
