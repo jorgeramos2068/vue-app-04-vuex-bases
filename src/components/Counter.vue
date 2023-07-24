@@ -6,7 +6,7 @@
     <h2>Map state: {{ counter }}</h2>
     <button @click="increment()">+1</button>
     <button @click="incrementBy(5)">+5</button>
-    <button>Random</button>
+    <button @click="incrementRandom()">Random</button>
   </div>
 </template>
 
@@ -28,6 +28,9 @@ export default {
     },
     incrementBy(value) {
       this.$store.commit('incrementBy', value);
+    },
+    incrementRandom() {
+      this.$store.dispatch('incrementRandom');
     },
   },
 };
